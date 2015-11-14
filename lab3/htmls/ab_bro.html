@@ -1,0 +1,48 @@
+<html>
+	<title>图书管理</title >
+	<body>
+		<center><h1>图书管理系统</h1></center><br><br>
+		<form method="post">
+			<!--<center><p>输入作者名字：<input type="text" name="author_name" /><input type="submit" value="查询" /></p></center>-->
+		</form><br>
+		<center>
+		<h3>添加书籍</h3>
+		<form method="post">
+	
+			<table border="1">
+				<tr>
+					<th>ISBN</th>
+					<th>Title</th>
+					<th>AuthorID</th>
+				</tr>
+				<tr>
+					<td><input type="number" name="ISBN"/></td>
+					<td><input type="text" name="Title" /></td>
+					<!--<td><input type="number" name="AuthorID"  /></td>-->
+					<td><select style = "width:150px" name = "AuthorID">
+					{% for author in authors %}
+					<option value = {{author.AuthorID}}>{{author.Name}}</option>
+					{% endfor %}
+					</select></td>
+				</tr>
+				<tr>
+					<th>Publisher</th>
+					<th>PublishDate</th>
+					<th>Price</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="Publisher" /></td>
+					<td><input type="date" name="PublishDate"  /></td>
+					<td><input type="number" name="Price" /></td>
+				</tr>
+			</table><br>
+			<input type="submit" value="添加" />
+		</form>
+		</center><br><br>
+		<form method="post">
+			<center><input type="submit" name = "allbook" value="查看全部书籍" /></center>
+		</form>
+		<center><a href = "/author_search">查询</a></center><br />
+		<center><a href = "/add_author">添加作者</a></center>
+	</body>
+</html>

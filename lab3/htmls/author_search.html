@@ -1,0 +1,34 @@
+﻿<html>
+	<title>查询作者结果</title>
+	<body>
+		<center><form method = "post"><p>输入作者名字：<input type="text" name="author_name" /><input type="submit" value="查询" /></p></from></center>
+		<center><h1>查询作者结果</h1><br><br>
+		{% if author %}
+		<table border="1">
+				<tr>
+					<th>AuthorID</th>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>国籍</th>
+				</tr>
+				<tr>
+					<td>{{author.AuthorID}}</td>
+					<td>{{author.Name}}</td>
+					<td>{{author.Age}}</td>
+					<td>{{author.Country}}</td>
+				</tr>
+		{% endif %}
+		{% if book_list %}
+		<table border="1">
+				<tr>
+					<th>书名</th>
+				</tr>
+				
+					{% for book in book_list %}
+			<tr><td>{{book.Title}}</td>	</tr>
+		{% endfor %}
+		{% endif %}
+		<center><a href = "/ab_bro">返回首页</center>
+		</p>
+	</body>
+</html>

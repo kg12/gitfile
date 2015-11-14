@@ -1,0 +1,35 @@
+﻿<html>
+	<title>书籍信息</title>
+	<body>
+		<center><h1>书籍信息</h1><br><br>
+		<table border="0">
+			<tr>
+				<th>书名：</th><td>{{book.Title}}</td>
+			</tr>
+			<tr>
+				<th>作者：</th><td>{{book.AuthorID.Name}}</td>
+			</tr>
+			<tr>
+				<th>作者ID：</th><td>{{book.AuthorID.AuthorID}}</td>
+			</tr>
+			<tr>
+				<th>ISBN:</th><td>{{book.ISBN}}</td>
+			</tr>
+			<tr>
+				<th>出版商：</th><td>{{book.Publisher}}</td>
+			</tr>
+			<tr>
+				<th>出版日期：</th><td>{{book.PublishDate}}</td>
+			</tr>
+			<tr>
+				<th>参考价格:</th><td>{{book.Price}} 元</td>
+			</tr>
+		</table><br>
+		<form method="get" >
+			<button name = "delete" value="{{book.ISBN}}" />删除</button>
+		</form>
+			<a href = "/ab_bro">返回主页</a>
+
+		</center>
+	</body>
+</html>

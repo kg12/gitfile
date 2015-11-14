@@ -1,0 +1,12 @@
+﻿<html>
+	<title>所有录入书籍</title>
+	<body>
+		<center><h1>所有录入书籍</h1><br>
+		<p>
+		{% for book in book_list %}
+			<a href="/book_info/{{book.ISBN}}">{{book.Title}}&nbsp&nbsp&nbsp&nbsp</a>
+		{% endfor %}</p><br>
+		<a href = "/ab_bro">返回首页</a>
+		</center>
+	</body>
+</html>
